@@ -12,7 +12,7 @@ jobs:
   runs-on: ubuntu-latest
   steps:
   - name:ad
-   runs: |
+   run: |
      docker build . --file Dockerfile
    
    
