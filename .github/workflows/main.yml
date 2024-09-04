@@ -17,6 +17,6 @@ jobs:
   steps:
   - name:ad
    runs:
-    uses: 'docker'
+    using: 'docker'
     image: 'Dockerfile'
     args: - ${{ inputs.who-to-greet }}
