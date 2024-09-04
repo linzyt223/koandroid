@@ -2,12 +2,11 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 on:
- workflow_dispatch:
-  inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
+  workflow_dispatch:
+    inputs:
+      docker_images:
+        description: '请填写docker镜像名称 多个用英文逗号分开'
+        required: true
 jobs:
  test:
   runs-on: ubuntu-latest
