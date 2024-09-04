@@ -1,8 +1,5 @@
-# Container image that runs your code
-FROM alpine:3.10
-
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
-
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/entrypoint.sh"]
+ARG REGISTRY=docker.io
+FROM $REGISTRY/koreader/kobase:0.8.3-20.04 AS build
+RUN git clone https://github.com/koreader/koreader.git
+    pushd koreader
+    ./kodev release android-arm64
