@@ -1,17 +1,18 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: Docker Image CI
+
 on:
-  workflow_dispatch:
-    inputs:
-      docker_images:
-        description: '请填写docker镜像名称 多个用英文逗号分开'
-        required: true
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
 jobs:
- test:
-  runs-on: ubuntu-latest
-  steps:
-  - name:ad
-   run: docker build . --file Dockerfile
-   
-   
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile
