@@ -11,7 +11,8 @@ inputs:
 outputs:
   time: # id of output
     description: 'The time we greeted you'
-runs:
+jobs:
+ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
