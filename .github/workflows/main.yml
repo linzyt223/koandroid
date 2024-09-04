@@ -12,9 +12,11 @@ outputs:
   time: # id of output
     description: 'The time we greeted you'
 jobs:
- steps:
+ build:
+  runs-on: ubuntu-latest
+  steps:
   - name:ad
-  runs:
-   uses: 'docker'
-   image: 'Dockerfile'
-   args: - ${{ inputs.who-to-greet }}
+   runs:
+    uses: 'docker'
+    image: 'Dockerfile'
+    args: - ${{ inputs.who-to-greet }}
