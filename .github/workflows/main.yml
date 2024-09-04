@@ -15,7 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile -t myd/mydkoan
+      run: |
+           docker build . --file Dockerfile -t myd/mydkoan
            docker save "myd/mydkoan" -o "12.tar"
 
     - name: Upload artifact
