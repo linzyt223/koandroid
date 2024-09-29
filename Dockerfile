@@ -1,5 +1,5 @@
 FROM runmymind/docker-android-sdk:ubuntu-standalone AS build
-RUN sudo /bin/bash -e <<EOF
+RUN  /bin/bash -e <<EOF
       git clone https://github.com/linzyt223/mupdf-android-viewer.git
       cd mupdf-android-viewer
       ls
